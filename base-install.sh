@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Script de Instalação Básica Mobile"
-echo "Feito em 21/06/2023"
+echo "Atualizado em 15/06/2023 - Rafael Gonçalves"
 echo "--------------------------------------------------------------------"
 echo
 
@@ -77,45 +77,24 @@ echo
 
 # Atualizações básicas
 echo "Atualizando a sua maquina"
-# apt-get ${APT_FLAGS} update && apt-get ${APT_FLAGS} upgrade
+apt-get ${APT_FLAGS} update && apt-get ${APT_FLAGS} upgrade
 
 echo
 # instalando o nodejs e suas dependencias
 echo "Instalando o NodeJS 20.x"
 echo
 
-echo "Esta no Atlas velho ou Novo ??"
-echo "Novo digite [n], Velho digite [v]"
+if   [[ OS -eq 'Ubuntu' ]] || [[ OS -eq 'LinuxMint' ]]; then
+    	curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+	sudo apt-get install -y nodejs
 
-read atlas
-
-if [[ ${atlas} = "n" ]]; then
-	if   [[ OS -eq 'Ubuntu' ]] || [[ OS -eq 'LinuxMint' ]]; then
-	    	curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
-		sudo apt-get install -y nodejs
-
-	elif [[ OS -eq 'Debian' ]]; then
-	   	curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
-		apt-get install -y nodejs
-		
-	else 
-	    	echo "Seu sistema não é compatível com esse script"
-	    	exit
-	fi
-
-else
-	if   [[ OS -eq 'Ubuntu' ]] || [[ OS -eq 'LinuxMint' ]]; then
-	    	curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
-		sudo apt-get install -y nodejs
-
-	elif [[ OS -eq 'Debian' ]]; then
-	   	curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
-		apt-get install -y nodejs
-		
-	else 
-	    	echo "Seu sistema não é compatível com esse script"
-	    	exit
-	fi
+elif [[ OS -eq 'Debian' ]]; then
+   	curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+	apt-get install -y nodejs
+	
+else 
+    	echo "Seu sistema não é compatível com esse script"
+    	exit
 fi
 
 # instalando Expo CLI
