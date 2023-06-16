@@ -77,24 +77,45 @@ echo
 
 # Atualizações básicas
 echo "Atualizando a sua maquina"
-apt-get ${APT_FLAGS} update && apt-get ${APT_FLAGS} upgrade
+# apt-get ${APT_FLAGS} update && apt-get ${APT_FLAGS} upgrade
 
 echo
 # instalando o nodejs e suas dependencias
 echo "Instalando o NodeJS 20.x"
 echo
 
-if   [[ OS -eq 'Ubuntu' ]] || [[ OS -eq 'LinuxMint' ]]; then
-    	curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
-	sudo apt-get install -y nodejs
+echo "Esta no Atlas velho ou Novo ??"
+echo "Novo digite [n], Velho digite [v]"
 
-elif [[ OS -eq 'Debian' ]]; then
-   	curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
-	apt-get install -y nodejs
-	
-else 
-    	echo "Seu sistema não é compatível com esse script"
-    	exit
+read atlas
+
+if [[ ${atlas} = "n" ]]; then
+	if   [[ OS -eq 'Ubuntu' ]] || [[ OS -eq 'LinuxMint' ]]; then
+	    	curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+		sudo apt-get install -y nodejs
+
+	elif [[ OS -eq 'Debian' ]]; then
+	   	curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+		apt-get install -y nodejs
+		
+	else 
+	    	echo "Seu sistema não é compatível com esse script"
+	    	exit
+	fi
+
+else
+	if   [[ OS -eq 'Ubuntu' ]] || [[ OS -eq 'LinuxMint' ]]; then
+	    	curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+		sudo apt-get install -y nodejs
+
+	elif [[ OS -eq 'Debian' ]]; then
+	   	curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
+		apt-get install -y nodejs
+		
+	else 
+	    	echo "Seu sistema não é compatível com esse script"
+	    	exit
+	fi
 fi
 
 # instalando Expo CLI
@@ -107,8 +128,7 @@ npm install --global expo-cli
 echo
 echo "Instalando crete-expo-app@2.0.3"
 echo
-npm install create-expo-app@2.0.3
+npm install create-expo-app@latest
 
 echo
 echo "<3 <3 <3 Aparentemente tudo certo <3 <3 <3"
-echo "
