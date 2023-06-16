@@ -8,7 +8,7 @@ Esse repositório contém alguns scripts feitos para auxiliar vocês (e a gente)
  - Debian 10 / oldstable (Buster) ou superior
  - Linux Mint 20 "Ulyana" (via Ubuntu 20.04 LTS) ou superior
 
-Caso seu computador não esteja não atenda a esse requisitos, entre em contato com algum membro de Projetos / Qualidade
+Caso seu computador não atenda a esse requisitos, entre em contato com algum membro de Projetos / Qualidade
 
 # Execução
 Para executar o script, rode os comandos:
