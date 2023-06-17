@@ -24,5 +24,3 @@ sudo ./base-install.sh --help
 # Pacotes Instalados
  - Node.js v20.x
  - Expo
- - Create Expo App
-
