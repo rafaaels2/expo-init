@@ -3,7 +3,6 @@
 echo "Script de Instalação Básica Mobile"
 echo "Atualizado em 15/06/2023 - Rafael Gonçalves"
 echo "--------------------------------------------------------------------"
-echo
 
 # Yes automático e diminui a saída pra facilitar o debug de erros
 APT_FLAGS=" -y -qq "
@@ -70,7 +69,6 @@ for var in "$@"; do
 	fi
 done
 
-echo
 echo "Iniciando instalação"
 echo "Isso pode demorar alguns minutos..."
 echo
@@ -102,6 +100,9 @@ echo
 echo "Instalando o Expo"
 echo
 npm install --global expo-cli
+
+# instalando @expo/ngrok@^4.1.0 (verei se realmente precisa)
+# sudo npm install @expo/ngrok@^4.1.0
 
 echo
 echo "<3 <3 <3 Aparentemente tudo certo <3 <3 <3"
