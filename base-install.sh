@@ -97,17 +97,11 @@ else
     	exit
 fi
 
-# instalando Expo CLI
+# instalando Expo 
 echo
-echo "Instalando o Expo CLI"
+echo "Instalando o Expo"
 echo
 npm install --global expo-cli
-
-# instalando crete-expo-app@2.0.3
-echo
-echo "Instalando crete-expo-app@2.0.3"
-echo
-npm install create-expo-app@latest
 
 echo
 echo "<3 <3 <3 Aparentemente tudo certo <3 <3 <3"
