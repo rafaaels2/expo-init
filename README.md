@@ -24,3 +24,12 @@ sudo ./base-install.sh --help
 # Pacotes Instalados
  - Node.js v20.x
  - Expo
+
+## Tecnologias Utilizadas
+<div style="display: inline_block">
+  <img align="center" alt="php" src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white"/>
+</div>
+
+<br />
+
+🟩 **FINALIZADO**
